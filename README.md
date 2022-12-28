@@ -32,7 +32,8 @@ More information can be found at:
 ### AXI example
 * [simple AXI](https://github.com/andrewyeh1005/AXI4/tree/main/src)
 
-**Note** Make sure to install python 3.x version in your environment
+**Note**
+Make sure to install python 3.x version in your environment
 ### Make your own AXI
 If no arugment is specified, it will generate AXI with one slave ports and one master ports.
 ```text
