@@ -6,7 +6,8 @@ Feel free to edit or make any changes.
 This is a simple demo of AXI4.
 
 
-More information can be found at: <http://www.gstitt.ece.ufl.edu/courses/fall15/eel4720_5721/labs/refs/AXI4_specification.pdf> (AXI  SPEC)
+More information can be found at:
+* [AXI SPEC](http://www.gstitt.ece.ufl.edu/courses/fall15/eel4720_5721/labs/refs/AXI4_specification.pdf)
 
 ## Support
 * AXI channel signals
@@ -30,7 +31,7 @@ More information can be found at: <http://www.gstitt.ece.ufl.edu/courses/fall15/
 
 ## Quick Start
 ### AXI example
-* [simple AXI](https://github.com/andrewyeh1005/AXI4/src)
+* [simple AXI](https://github.com/andrewyeh1005/AXI4/tree/main/src)
 
 **Note: Make sure to install python 3.x version in your environment
 ### Make your own AXI
