@@ -4,7 +4,7 @@ Feel free to edit or make any changes.
 ## Description
 
 This is a simple demo of AXI4.
-![](https://github.com/andrewyeh1005/AXI4/tree/main/assets/blockdiagram.png)
+![image](https://github.com/andrewyeh1005/AXI4/tree/main/assets/blockdiagram.png)
 
 More information can be found at:
 * [AXI SPEC](http://www.gstitt.ece.ufl.edu/courses/fall15/eel4720_5721/labs/refs/AXI4_specification.pdf)
