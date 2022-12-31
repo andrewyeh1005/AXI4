@@ -588,7 +588,7 @@ always_comb begin
 			RVALID_M0  = axi_rvalid;
 		end
 		read_mas_onehot_idx[1] & (read_cs == AR): begin//master 1
-			ARREADY_M0 = axi_arready;
+			ARREADY_M1 = axi_arready;
 		end
 		read_mas_onehot_idx[1] & (read_cs ==  R): begin//master 1
 			RID_M1     = axi_rid[3:0];
