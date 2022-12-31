@@ -2,8 +2,8 @@
 `include "priority_arbiter.sv"
 `include "../include/AXI_define.svh"
 
-`define MASTER_NUM 2
-`define SLAVE_NUM  5
+`define MASTER_NUM 5
+`define SLAVE_NUM  3
 `define BRIDGE_ID  4'd0
 
 module AXI (
@@ -69,6 +69,96 @@ module AXI (
 	output logic [ `RESP_WIDTH - 1:0]  BRESP_M1,
 	output logic                       BVALID_M1,
 	input  logic                       BREADY_M1,
+//------------------------[ MASTER 2 ]------------------------//
+	input  logic [     `ID_MAS - 1:0]  ARID_M2,
+	input  logic [ `ADDR_WIDTH - 1:0]  ARADDR_M2,
+	input  logic [  `LEN_WIDTH - 1:0]  ARLEN_M2,
+	input  logic [ `SIZE_WIDTH - 1:0]  ARSIZE_M2,
+	input  logic [`BURST_WIDTH - 1:0]  ARBURST_M2,
+	input  logic                       ARVALID_M2,
+	output logic                       ARREADY_M2,
+	input  logic                       RREADY_M2,
+	output logic [     `ID_MAS - 1:0]  RID_M2,
+	output logic [ `DATA_WIDTH - 1:0]  RDATA_M2,
+	output logic [ `RESP_WIDTH - 1:0]  RRESP_M2,
+	output logic                       RLAST_M2,
+	output logic                       RVALID_M2,
+	input  logic [     `ID_MAS - 1:0]  AWID_M2,
+	input  logic [ `ADDR_WIDTH - 1:0]  AWADDR_M2,
+	input  logic [  `LEN_WIDTH - 1:0]  AWLEN_M2,
+	input  logic [ `SIZE_WIDTH - 1:0]  AWSIZE_M2,
+	input  logic [               1:0]  AWBURST_M2,
+	input  logic                       AWVALID_M2,
+	output logic                       AWREADY_M2,
+	input  logic [ `DATA_WIDTH - 1:0]  WDATA_M2,
+	input  logic [ `STRB_WIDTH - 1:0]  WSTRB_M2,
+	input  logic                       WLAST_M2,
+	input  logic                       WVALID_M2,
+	output logic                       WREADY_M2,
+	output logic [  `AXI_ID_BITS-1:0]  BID_M2,
+	output logic [ `RESP_WIDTH - 1:0]  BRESP_M2,
+	output logic                       BVALID_M2,
+	input  logic                       BREADY_M2,
+//------------------------[ MASTER 3 ]------------------------//
+	input  logic [     `ID_MAS - 1:0]  ARID_M3,
+	input  logic [ `ADDR_WIDTH - 1:0]  ARADDR_M3,
+	input  logic [  `LEN_WIDTH - 1:0]  ARLEN_M3,
+	input  logic [ `SIZE_WIDTH - 1:0]  ARSIZE_M3,
+	input  logic [`BURST_WIDTH - 1:0]  ARBURST_M3,
+	input  logic                       ARVALID_M3,
+	output logic                       ARREADY_M3,
+	input  logic                       RREADY_M3,
+	output logic [     `ID_MAS - 1:0]  RID_M3,
+	output logic [ `DATA_WIDTH - 1:0]  RDATA_M3,
+	output logic [ `RESP_WIDTH - 1:0]  RRESP_M3,
+	output logic                       RLAST_M3,
+	output logic                       RVALID_M3,
+	input  logic [     `ID_MAS - 1:0]  AWID_M3,
+	input  logic [ `ADDR_WIDTH - 1:0]  AWADDR_M3,
+	input  logic [  `LEN_WIDTH - 1:0]  AWLEN_M3,
+	input  logic [ `SIZE_WIDTH - 1:0]  AWSIZE_M3,
+	input  logic [               1:0]  AWBURST_M3,
+	input  logic                       AWVALID_M3,
+	output logic                       AWREADY_M3,
+	input  logic [ `DATA_WIDTH - 1:0]  WDATA_M3,
+	input  logic [ `STRB_WIDTH - 1:0]  WSTRB_M3,
+	input  logic                       WLAST_M3,
+	input  logic                       WVALID_M3,
+	output logic                       WREADY_M3,
+	output logic [  `AXI_ID_BITS-1:0]  BID_M3,
+	output logic [ `RESP_WIDTH - 1:0]  BRESP_M3,
+	output logic                       BVALID_M3,
+	input  logic                       BREADY_M3,
+//------------------------[ MASTER 4 ]------------------------//
+	input  logic [     `ID_MAS - 1:0]  ARID_M4,
+	input  logic [ `ADDR_WIDTH - 1:0]  ARADDR_M4,
+	input  logic [  `LEN_WIDTH - 1:0]  ARLEN_M4,
+	input  logic [ `SIZE_WIDTH - 1:0]  ARSIZE_M4,
+	input  logic [`BURST_WIDTH - 1:0]  ARBURST_M4,
+	input  logic                       ARVALID_M4,
+	output logic                       ARREADY_M4,
+	input  logic                       RREADY_M4,
+	output logic [     `ID_MAS - 1:0]  RID_M4,
+	output logic [ `DATA_WIDTH - 1:0]  RDATA_M4,
+	output logic [ `RESP_WIDTH - 1:0]  RRESP_M4,
+	output logic                       RLAST_M4,
+	output logic                       RVALID_M4,
+	input  logic [     `ID_MAS - 1:0]  AWID_M4,
+	input  logic [ `ADDR_WIDTH - 1:0]  AWADDR_M4,
+	input  logic [  `LEN_WIDTH - 1:0]  AWLEN_M4,
+	input  logic [ `SIZE_WIDTH - 1:0]  AWSIZE_M4,
+	input  logic [               1:0]  AWBURST_M4,
+	input  logic                       AWVALID_M4,
+	output logic                       AWREADY_M4,
+	input  logic [ `DATA_WIDTH - 1:0]  WDATA_M4,
+	input  logic [ `STRB_WIDTH - 1:0]  WSTRB_M4,
+	input  logic                       WLAST_M4,
+	input  logic                       WVALID_M4,
+	output logic                       WREADY_M4,
+	output logic [  `AXI_ID_BITS-1:0]  BID_M4,
+	output logic [ `RESP_WIDTH - 1:0]  BRESP_M4,
+	output logic                       BVALID_M4,
+	input  logic                       BREADY_M4,
 //------------------------[ SLAVE 0 ]------------------------//
 	output logic [     `ID_SLV - 1:0]  ARID_S0,
 	output logic [ `ADDR_WIDTH - 1:0]  ARADDR_S0,
@@ -158,67 +248,7 @@ module AXI (
 	input  logic [  `AXI_ID_BITS-1:0]  BID_S2,
 	input  logic [ `RESP_WIDTH - 1:0]  BRESP_S2,
 	input  logic                       BVALID_S2,
-	output logic                       BREADY_S2,
-//------------------------[ SLAVE 3 ]------------------------//
-	output logic [     `ID_SLV - 1:0]  ARID_S3,
-	output logic [ `ADDR_WIDTH - 1:0]  ARADDR_S3,
-	output logic [  `LEN_WIDTH - 1:0]  ARLEN_S3,
-	output logic [ `SIZE_WIDTH - 1:0]  ARSIZE_S3,
-	output logic [`BURST_WIDTH - 1:0]  ARBURST_S3,
-	output logic                       ARVALID_S3,
-	input  logic                       ARREADY_S3,
-	output logic                       RREADY_S3,
-	input  logic [     `ID_SLV - 1:0]  RID_S3,
-	input  logic [ `DATA_WIDTH - 1:0]  RDATA_S3,
-	input  logic [ `RESP_WIDTH - 1:0]  RRESP_S3,
-	input  logic                       RLAST_S3,
-	input  logic                       RVALID_S3,
-	output logic [     `ID_SLV - 1:0]  AWID_S3,
-	output logic [ `ADDR_WIDTH - 1:0]  AWADDR_S3,
-	output logic [  `LEN_WIDTH - 1:0]  AWLEN_S3,
-	output logic [ `SIZE_WIDTH - 1:0]  AWSIZE_S3,
-	output logic [               1:0]  AWBURST_S3,
-	output logic                       AWVALID_S3,
-	input  logic                       AWREADY_S3,
-	output logic [ `DATA_WIDTH - 1:0]  WDATA_S3,
-	output logic [ `STRB_WIDTH - 1:0]  WSTRB_S3,
-	output logic                       WLAST_S3,
-	output logic                       WVALID_S3,
-	input  logic                       WREADY_S3,
-	input  logic [  `AXI_ID_BITS-1:0]  BID_S3,
-	input  logic [ `RESP_WIDTH - 1:0]  BRESP_S3,
-	input  logic                       BVALID_S3,
-	output logic                       BREADY_S3,
-//------------------------[ SLAVE 4 ]------------------------//
-	output logic [     `ID_SLV - 1:0]  ARID_S4,
-	output logic [ `ADDR_WIDTH - 1:0]  ARADDR_S4,
-	output logic [  `LEN_WIDTH - 1:0]  ARLEN_S4,
-	output logic [ `SIZE_WIDTH - 1:0]  ARSIZE_S4,
-	output logic [`BURST_WIDTH - 1:0]  ARBURST_S4,
-	output logic                       ARVALID_S4,
-	input  logic                       ARREADY_S4,
-	output logic                       RREADY_S4,
-	input  logic [     `ID_SLV - 1:0]  RID_S4,
-	input  logic [ `DATA_WIDTH - 1:0]  RDATA_S4,
-	input  logic [ `RESP_WIDTH - 1:0]  RRESP_S4,
-	input  logic                       RLAST_S4,
-	input  logic                       RVALID_S4,
-	output logic [     `ID_SLV - 1:0]  AWID_S4,
-	output logic [ `ADDR_WIDTH - 1:0]  AWADDR_S4,
-	output logic [  `LEN_WIDTH - 1:0]  AWLEN_S4,
-	output logic [ `SIZE_WIDTH - 1:0]  AWSIZE_S4,
-	output logic [               1:0]  AWBURST_S4,
-	output logic                       AWVALID_S4,
-	input  logic                       AWREADY_S4,
-	output logic [ `DATA_WIDTH - 1:0]  WDATA_S4,
-	output logic [ `STRB_WIDTH - 1:0]  WSTRB_S4,
-	output logic                       WLAST_S4,
-	output logic                       WVALID_S4,
-	input  logic                       WREADY_S4,
-	input  logic [  `AXI_ID_BITS-1:0]  BID_S4,
-	input  logic [ `RESP_WIDTH - 1:0]  BRESP_S4,
-	input  logic                       BVALID_S4,
-	output logic                       BREADY_S4
+	output logic                       BREADY_S2
 );
 
 //------------------------[ AXI logic ]------------------------//
@@ -393,6 +423,33 @@ always_comb begin
 			axi_arvalid  = ARVALID_M1;
 			axi_rready   = RREADY_M1;
 		end
+		read_mas_onehot_idx[2]: begin//master 2
+			axi_arid     = ARID_M2;
+			axi_araddr   = ARADDR_M2;
+			axi_arlen    = ARLEN_M2;
+			axi_arsize   = ARSIZE_M2;
+			axi_arburst  = ARBURST_M2;
+			axi_arvalid  = ARVALID_M2;
+			axi_rready   = RREADY_M2;
+		end
+		read_mas_onehot_idx[3]: begin//master 3
+			axi_arid     = ARID_M3;
+			axi_araddr   = ARADDR_M3;
+			axi_arlen    = ARLEN_M3;
+			axi_arsize   = ARSIZE_M3;
+			axi_arburst  = ARBURST_M3;
+			axi_arvalid  = ARVALID_M3;
+			axi_rready   = RREADY_M3;
+		end
+		read_mas_onehot_idx[4]: begin//master 4
+			axi_arid     = ARID_M4;
+			axi_araddr   = ARADDR_M4;
+			axi_arlen    = ARLEN_M4;
+			axi_arsize   = ARSIZE_M4;
+			axi_arburst  = ARBURST_M4;
+			axi_arvalid  = ARVALID_M4;
+			axi_rready   = RREADY_M4;
+		end
 		default;
 	endcase
 	unique case(1'b1)
@@ -419,22 +476,6 @@ always_comb begin
 			axi_rresp    = RRESP_S2;
 			axi_rlast    = RLAST_S2;
 			axi_rvalid   = RVALID_S2;
-		end
-		read_slv_onehot_idx[3]: begin//slave 3
-			axi_arready  = ARREADY_S3;
-			axi_rid      = RID_S3;
-			axi_rdata    = RDATA_S3;
-			axi_rresp    = RRESP_S3;
-			axi_rlast    = RLAST_S3;
-			axi_rvalid   = RVALID_S3;
-		end
-		read_slv_onehot_idx[4]: begin//slave 4
-			axi_arready  = ARREADY_S4;
-			axi_rid      = RID_S4;
-			axi_rdata    = RDATA_S4;
-			axi_rresp    = RRESP_S4;
-			axi_rlast    = RLAST_S4;
-			axi_rvalid   = RVALID_S4;
 		end
 		default;
 	endcase
@@ -465,6 +506,45 @@ always_comb begin
 			axi_wvalid   = WVALID_M1;
 			axi_bready   = BREADY_M1;
 		end
+		write_mas_onehot_idx[2]: begin//master 2
+			axi_awid     = AWID_M2;
+			axi_awaddr   = AWADDR_M2;
+			axi_awlen    = AWLEN_M2;
+			axi_awsize   = AWSIZE_M2;
+			axi_awburst  = AWBURST_M2;
+			axi_awvalid  = AWVALID_M2;
+			axi_wdata    = WDATA_M2;
+			axi_wstrb    = WSTRB_M2;
+			axi_wlast    = WLAST_M2;
+			axi_wvalid   = WVALID_M2;
+			axi_bready   = BREADY_M2;
+		end
+		write_mas_onehot_idx[3]: begin//master 3
+			axi_awid     = AWID_M3;
+			axi_awaddr   = AWADDR_M3;
+			axi_awlen    = AWLEN_M3;
+			axi_awsize   = AWSIZE_M3;
+			axi_awburst  = AWBURST_M3;
+			axi_awvalid  = AWVALID_M3;
+			axi_wdata    = WDATA_M3;
+			axi_wstrb    = WSTRB_M3;
+			axi_wlast    = WLAST_M3;
+			axi_wvalid   = WVALID_M3;
+			axi_bready   = BREADY_M3;
+		end
+		write_mas_onehot_idx[4]: begin//master 4
+			axi_awid     = AWID_M4;
+			axi_awaddr   = AWADDR_M4;
+			axi_awlen    = AWLEN_M4;
+			axi_awsize   = AWSIZE_M4;
+			axi_awburst  = AWBURST_M4;
+			axi_awvalid  = AWVALID_M4;
+			axi_wdata    = WDATA_M4;
+			axi_wstrb    = WSTRB_M4;
+			axi_wlast    = WLAST_M4;
+			axi_wvalid   = WVALID_M4;
+			axi_bready   = BREADY_M4;
+		end
 		default;
 	endcase
 	unique case(1'b1)
@@ -488,20 +568,6 @@ always_comb begin
 			axi_bid      = BID_S2;
 			axi_bresp    = BRESP_S2;
 			axi_bvalid   = BVALID_S2;
-		end
-		write_slv_onehot_idx[3]: begin//slave 3
-			axi_awready  = AWREADY_S3;
-			axi_wready   = WREADY_S3;
-			axi_bid      = BID_S3;
-			axi_bresp    = BRESP_S3;
-			axi_bvalid   = BVALID_S3;
-		end
-		write_slv_onehot_idx[4]: begin//slave 4
-			axi_awready  = AWREADY_S4;
-			axi_wready   = WREADY_S4;
-			axi_bid      = BID_S4;
-			axi_bresp    = BRESP_S4;
-			axi_bvalid   = BVALID_S4;
 		end
 		default;
 	endcase
@@ -531,6 +597,39 @@ always_comb begin
 	BID_M1     = 'd0;
 	BRESP_M1   = 'd0;
 	BVALID_M1  = 'd0;
+	ARREADY_M2 = 'd0;
+	RID_M2     = 'd0;
+	RDATA_M2   = 'd0;
+	RRESP_M2   = 'd0;
+	RLAST_M2   = 'd0;
+	RVALID_M2  = 'd0;
+	AWREADY_M2 = 'd0;
+	WREADY_M2  = 'd0;
+	BID_M2     = 'd0;
+	BRESP_M2   = 'd0;
+	BVALID_M2  = 'd0;
+	ARREADY_M3 = 'd0;
+	RID_M3     = 'd0;
+	RDATA_M3   = 'd0;
+	RRESP_M3   = 'd0;
+	RLAST_M3   = 'd0;
+	RVALID_M3  = 'd0;
+	AWREADY_M3 = 'd0;
+	WREADY_M3  = 'd0;
+	BID_M3     = 'd0;
+	BRESP_M3   = 'd0;
+	BVALID_M3  = 'd0;
+	ARREADY_M4 = 'd0;
+	RID_M4     = 'd0;
+	RDATA_M4   = 'd0;
+	RRESP_M4   = 'd0;
+	RLAST_M4   = 'd0;
+	RVALID_M4  = 'd0;
+	AWREADY_M4 = 'd0;
+	WREADY_M4  = 'd0;
+	BID_M4     = 'd0;
+	BRESP_M4   = 'd0;
+	BVALID_M4  = 'd0;
 	unique case(1'b1)
 		read_mas_onehot_idx[0] & (read_cs == AR): begin//master 0
 			ARREADY_M0 = axi_arready;
@@ -543,7 +642,7 @@ always_comb begin
 			RVALID_M0  = axi_rvalid;
 		end
 		read_mas_onehot_idx[1] & (read_cs == AR): begin//master 1
-			ARREADY_M0 = axi_arready;
+			ARREADY_M1 = axi_arready;
 		end
 		read_mas_onehot_idx[1] & (read_cs ==  R): begin//master 1
 			RID_M1     = axi_rid[3:0];
@@ -551,6 +650,36 @@ always_comb begin
 			RRESP_M1   = axi_rresp;
 			RLAST_M1   = axi_rlast;
 			RVALID_M1  = axi_rvalid;
+		end
+		read_mas_onehot_idx[2] & (read_cs == AR): begin//master 2
+			ARREADY_M2 = axi_arready;
+		end
+		read_mas_onehot_idx[2] & (read_cs ==  R): begin//master 2
+			RID_M2     = axi_rid[3:0];
+			RDATA_M2   = axi_rdata;
+			RRESP_M2   = axi_rresp;
+			RLAST_M2   = axi_rlast;
+			RVALID_M2  = axi_rvalid;
+		end
+		read_mas_onehot_idx[3] & (read_cs == AR): begin//master 3
+			ARREADY_M3 = axi_arready;
+		end
+		read_mas_onehot_idx[3] & (read_cs ==  R): begin//master 3
+			RID_M3     = axi_rid[3:0];
+			RDATA_M3   = axi_rdata;
+			RRESP_M3   = axi_rresp;
+			RLAST_M3   = axi_rlast;
+			RVALID_M3  = axi_rvalid;
+		end
+		read_mas_onehot_idx[4] & (read_cs == AR): begin//master 4
+			ARREADY_M4 = axi_arready;
+		end
+		read_mas_onehot_idx[4] & (read_cs ==  R): begin//master 4
+			RID_M4     = axi_rid[3:0];
+			RDATA_M4   = axi_rdata;
+			RRESP_M4   = axi_rresp;
+			RLAST_M4   = axi_rlast;
+			RVALID_M4  = axi_rvalid;
 		end
 		default;
 	endcase
@@ -576,6 +705,39 @@ always_comb begin
 			BID_M1     = axi_bid[3:0];
 			BRESP_M1   = axi_bresp ;
 			BVALID_M1  = axi_bvalid;
+		end
+		write_mas_onehot_idx[2] & (write_cs == AW): begin//master 2
+			AWREADY_M2 = axi_awready;
+		end
+		write_mas_onehot_idx[2] & (write_cs == W): begin//master 2
+			WREADY_M2 = axi_wready;
+		end
+		write_mas_onehot_idx[2] & (write_cs == B): begin//master 2
+			BID_M2     = axi_bid[3:0];
+			BRESP_M2   = axi_bresp ;
+			BVALID_M2  = axi_bvalid;
+		end
+		write_mas_onehot_idx[3] & (write_cs == AW): begin//master 3
+			AWREADY_M3 = axi_awready;
+		end
+		write_mas_onehot_idx[3] & (write_cs == W): begin//master 3
+			WREADY_M3 = axi_wready;
+		end
+		write_mas_onehot_idx[3] & (write_cs == B): begin//master 3
+			BID_M3     = axi_bid[3:0];
+			BRESP_M3   = axi_bresp ;
+			BVALID_M3  = axi_bvalid;
+		end
+		write_mas_onehot_idx[4] & (write_cs == AW): begin//master 4
+			AWREADY_M4 = axi_awready;
+		end
+		write_mas_onehot_idx[4] & (write_cs == W): begin//master 4
+			WREADY_M4 = axi_wready;
+		end
+		write_mas_onehot_idx[4] & (write_cs == B): begin//master 4
+			BID_M4     = axi_bid[3:0];
+			BRESP_M4   = axi_bresp ;
+			BVALID_M4  = axi_bvalid;
 		end
 		default;
 	endcase
@@ -635,42 +797,6 @@ always_comb begin
 	ARVALID_S2  =   'd0;
 	RREADY_S2   =   'd0;
 	BREADY_S2   =   'd0;
-	AWID_S3     =   'd0;
-	AWADDR_S3   =   'd0;
-	AWLEN_S3    =   'd0;
-	AWSIZE_S3   =   'd0;
-	AWBURST_S3  =   'd0;
-	AWVALID_S3  =   'd0;
-	WDATA_S3    =   'd0;
-	WSTRB_S3    =   'hf;
-	WLAST_S3    =   'd0;
-	WVALID_S3   =   'd0;
-	ARID_S3     =   'd0;
-	ARADDR_S3   =   'd0;
-	ARLEN_S3    =   'd0;
-	ARSIZE_S3   =   'd0;
-	ARBURST_S3  =   'd0;
-	ARVALID_S3  =   'd0;
-	RREADY_S3   =   'd0;
-	BREADY_S3   =   'd0;
-	AWID_S4     =   'd0;
-	AWADDR_S4   =   'd0;
-	AWLEN_S4    =   'd0;
-	AWSIZE_S4   =   'd0;
-	AWBURST_S4  =   'd0;
-	AWVALID_S4  =   'd0;
-	WDATA_S4    =   'd0;
-	WSTRB_S4    =   'hf;
-	WLAST_S4    =   'd0;
-	WVALID_S4   =   'd0;
-	ARID_S4     =   'd0;
-	ARADDR_S4   =   'd0;
-	ARLEN_S4    =   'd0;
-	ARSIZE_S4   =   'd0;
-	ARBURST_S4  =   'd0;
-	ARVALID_S4  =   'd0;
-	RREADY_S4   =   'd0;
-	BREADY_S4   =   'd0;
 	unique case(1'b1)
 		read_slv_onehot_idx[0] & (read_cs == AR): begin//slave 0
 			ARID_S0    = {`BRIDGE_ID,axi_arid};
@@ -704,28 +830,6 @@ always_comb begin
 		end
 		read_slv_onehot_idx[2] & (read_cs == R): begin//slave 2
 			RREADY_S2  = axi_rready;
-		end
-		read_slv_onehot_idx[3] & (read_cs == AR): begin//slave 3
-			ARID_S3    = {`BRIDGE_ID,axi_arid};
-			ARADDR_S3  = axi_araddr;
-			ARLEN_S3   = axi_arlen;
-			ARSIZE_S3  = axi_arsize;
-			ARBURST_S3 = axi_arburst;
-			ARVALID_S3 = axi_arvalid;
-		end
-		read_slv_onehot_idx[3] & (read_cs == R): begin//slave 3
-			RREADY_S3  = axi_rready;
-		end
-		read_slv_onehot_idx[4] & (read_cs == AR): begin//slave 4
-			ARID_S4    = {`BRIDGE_ID,axi_arid};
-			ARADDR_S4  = axi_araddr;
-			ARLEN_S4   = axi_arlen;
-			ARSIZE_S4  = axi_arsize;
-			ARBURST_S4 = axi_arburst;
-			ARVALID_S4 = axi_arvalid;
-		end
-		read_slv_onehot_idx[4] & (read_cs == R): begin//slave 4
-			RREADY_S4  = axi_rready;
 		end
 		default;
 	endcase
@@ -782,47 +886,13 @@ always_comb begin
 		write_slv_onehot_idx[2] & (write_cs == B): begin//slave 2
 			BREADY_S2 = axi_bready;
 		end
-		write_slv_onehot_idx[3] & (write_cs == AW): begin//slave 3
-			AWID_S3    = {`BRIDGE_ID,axi_awid};
-			AWADDR_S3  = axi_awaddr;
-			AWLEN_S3   = axi_awlen;
-			AWSIZE_S3  = axi_awsize;
-			AWBURST_S3 = axi_awburst;
-			AWVALID_S3 = axi_awvalid;
-		end
-		write_slv_onehot_idx[3] & (write_cs == W): begin//slave 3
-			WDATA_S3  = axi_wdata;
-			WSTRB_S3  = axi_wstrb;
-			WLAST_S3  = axi_wlast;
-			WVALID_S3 = axi_wvalid;
-		end
-		write_slv_onehot_idx[3] & (write_cs == B): begin//slave 3
-			BREADY_S3 = axi_bready;
-		end
-		write_slv_onehot_idx[4] & (write_cs == AW): begin//slave 4
-			AWID_S4    = {`BRIDGE_ID,axi_awid};
-			AWADDR_S4  = axi_awaddr;
-			AWLEN_S4   = axi_awlen;
-			AWSIZE_S4  = axi_awsize;
-			AWBURST_S4 = axi_awburst;
-			AWVALID_S4 = axi_awvalid;
-		end
-		write_slv_onehot_idx[4] & (write_cs == W): begin//slave 4
-			WDATA_S4  = axi_wdata;
-			WSTRB_S4  = axi_wstrb;
-			WLAST_S4  = axi_wlast;
-			WVALID_S4 = axi_wvalid;
-		end
-		write_slv_onehot_idx[4] & (write_cs == B): begin//slave 4
-			BREADY_S4 = axi_bready;
-		end
 		default;
 	endcase
 end
 
 //------------------------[ arbiter / decoder ]------------------------//
-assign ar_request = { ARVALID_M1, ARVALID_M0};
-assign aw_request = { AWVALID_M1, AWVALID_M0};
+assign ar_request = { ARVALID_M4, ARVALID_M3, ARVALID_M2, ARVALID_M1, ARVALID_M0};
+assign aw_request = { AWVALID_M4, AWVALID_M3, AWVALID_M2, AWVALID_M1, AWVALID_M0};
 
 always_comb begin
 	aw_grant_mas_addr = `ADDR_WIDTH'h0;
@@ -830,11 +900,17 @@ always_comb begin
 	unique case(1'b1)
 		write_mas_onehot_idx[0]: aw_grant_mas_addr = AWADDR_M0;
 		write_mas_onehot_idx[1]: aw_grant_mas_addr = AWADDR_M1;
+		write_mas_onehot_idx[2]: aw_grant_mas_addr = AWADDR_M2;
+		write_mas_onehot_idx[3]: aw_grant_mas_addr = AWADDR_M3;
+		write_mas_onehot_idx[4]: aw_grant_mas_addr = AWADDR_M4;
 		default;
 	endcase
 	unique case(1'b1)
 		read_mas_onehot_idx[0]: ar_grant_mas_addr = ARADDR_M0;
 		read_mas_onehot_idx[1]: ar_grant_mas_addr = ARADDR_M1;
+		read_mas_onehot_idx[2]: ar_grant_mas_addr = ARADDR_M2;
+		read_mas_onehot_idx[3]: ar_grant_mas_addr = ARADDR_M3;
+		read_mas_onehot_idx[4]: ar_grant_mas_addr = ARADDR_M4;
 		default;
 	endcase
 end

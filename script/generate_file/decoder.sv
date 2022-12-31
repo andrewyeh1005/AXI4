@@ -7,11 +7,9 @@ module decoder#(
 	always_comb begin
 		select = SLAVE_NUM'b0;
 		unique case(addr)
-			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b00001;
-			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b00010;
-			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b00100;
-			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b01000;
-			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b10000;
+			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b001;
+			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b010;
+			`ADDR_WIDTH'd[user defined] : select = SLAVE_NUM'b100;
 			default:;
 		endcase
 	end

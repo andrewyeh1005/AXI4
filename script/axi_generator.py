@@ -342,7 +342,7 @@ for i in range(master_num):
 text.append("\tunique case(1'b1)")
 for i in range(master_num):
     text.append("\t\tread_mas_onehot_idx["+ str(i) +"] & (read_cs == AR): begin//master "+str(i))
-    text.append("\t\t\tARREADY_M0 = axi_arready;")
+    text.append("\t\t\tARREADY_M"+ str(i) +" = axi_arready;")
     text.append("\t\tend")
     text.append("\t\tread_mas_onehot_idx["+ str(i) +"] & (read_cs ==  R): begin//master "+str(i))
     text.append("\t\t\tRID_M"+ str(i) +"     = axi_rid[3:0];")
@@ -524,14 +524,14 @@ with open('./generate_file/decoder.sv', 'w') as f:
 
 text = []
 text.append("module priority_arbiter #(")
-text.append("\tparameter MASTER_NUM = 1")
+text.append("\tparameter MASTER_NUM = 2")
 text.append(")(")
 text.append("\tinput  logic [MASTER_NUM - 1:0] request,")
 text.append("\toutput logic [MASTER_NUM - 1:0] grant")
 text.append(");")
 text.append("\tlogic [MASTER_NUM - 1:0]  pre_req;")
 text.append("\tassign pre_req[0] = 1'b0;")
-text.append("\tassign pre_req[1] = request[0] | pre_req[0];")
+text.append("\tassign pre_req[MASTER_NUM - 1:1] = request[MASTER_NUM - 2:0] | pre_req[MASTER_NUM - 2:0];")
 text.append("\tassign grant      = request & (~pre_req);")
 text.append("endmodule")
 
